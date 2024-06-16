@@ -8,9 +8,6 @@ def main():
     reminders = os.popen("reminders show Reminders -f json").read()
     reminders = json.loads(reminders)
 
-    with open("reminders.json", "w") as f:
-        json.dump(reminders, f)
-
     # reminders to show
     upcoming_reminders = []
 
