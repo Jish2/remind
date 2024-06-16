@@ -1,5 +1,13 @@
 ### installation
 
+run `./install.sh`
+
+```
+bash ./install.sh
+```
+
+alternatively, cherry pick the steps if you already have some
+
 install `reminders-cli`
 
 ```
