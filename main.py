@@ -1,11 +1,18 @@
-import os
 import json
 from datetime import datetime
+import subprocess
 
 
 def main():
     # get reminders
-    reminders = os.popen("reminders show Reminders -f json").read()
+    process = subprocess.Popen(
+        "reminders show Reminders -f json".split(" "),
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    stdout, stderr = process.communicate()
+
+    reminders = stdout.decode("utf-8")
     reminders = json.loads(reminders)
 
     # reminders to show
